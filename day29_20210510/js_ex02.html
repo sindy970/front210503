@@ -1,0 +1,54 @@
+<!-- 연습문제 
+    구구단 출력 프로그램
+        js를 이용하여 구구단출력버튼을 누르면 구구단테이블이 생성되도록 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단출력</title>
+    <script>
+        function num(){
+            var num1 = '<table>';
+                for(var i=2; i<10; i++){
+                    num1 += '<tr>';
+                    num1 += ('<td>' +i+'단' + '</td>');
+                    for(var j=1; j<10; j++){
+                        num1 += ('<td>' +(i*j) + '</td>');
+                    }
+                    num1 += '</tr>';
+                }
+                num1+='</table>';
+                // 추가로 넣을 경우에는 무조건 +를 해줘야 한다. 그렇지 않고 그냥 =를 넣게되면 초기화되고 =한 값만 들어간다.
+
+            // console.log(num1); -> 확인을 위해서 씀
+            document.getElementById('table').innerHTML = num1;
+        }
+
+    </script>
+
+    <style>
+        table,tr,td {
+            border: 3px black solid;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+        }
+        tr:nth-child(even){
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="num()">구구단출력</button>
+
+    <div id="table">
+
+    </div>
+    <!-- <table style="border: 3px black solid; border-collapse: collapse;">
+        
+    </table> -->
+    
+</body>
+</html>
