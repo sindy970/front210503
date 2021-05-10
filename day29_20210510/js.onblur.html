@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1(){
+            console.log('test1함수 호출');
+            // alert('입력칸을 벗어났습니다.');
+            var ele = document.getElementById('id1');
+            ele.value = ele.value.toUpperCase();
+            // toUpperCase()는 소문자를 대문자로 변환해 주는 속성이다.
+
+            // '필수입력항목'이라는 안내 문구를 출력해 준다.
+            // 사용자 입력에 제한을 둘 수 있는 문구를 출력해준다
+            // 주로 회원가입할때 많이 사용된다.
+            var result = document.getElementById('result');
+            console.log(ele.value.length);
+            if(ele.value.length ==0){
+                result.style.color = 'red';
+                result.innerHTML = '필수입력항목입니다.'
+            } else if(ele.value.length<8 || ele.value.length>16){
+                result.style.color = 'green';
+                result.innerHTML = '8~16자 이내로 써주세요.';
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <!-- onblur속성 : 입력칸을 벗어나면 test1함수가 호출된다.
+                    : 해당 요소를 벗어나는 순간 다음 내용이 실행된다. -->
+    입력1 : <input type="text" onblur="test1()" id="id1"><br>
+    <span id="result"></span><br>
+    입력2 : <input type="text"  id="id2"><br>
+</body>
+</html>

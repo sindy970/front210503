@@ -1,0 +1,29 @@
+<!-- select박스를 이용하여 이메일 입력받는 것 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnChange</title>
+    <script>
+        function test1(){
+            // var result = document.getElementById('id1').value;
+            // document.getElementById('id2').value = result;
+            // 위에 아래 2가지 방법 모두 가능
+            document.getElementById('id2').value 
+                    = document.getElementById('id1').value;
+        }
+    </script>
+</head>
+<body>
+    이메일 : <input type="text"> @ <input type="text" id="id2">
+    <select id="id1" onchange="test1()">
+        <option value="직접입력">직접입력</option>
+        <option value="naver.com">naver.com</option>
+        <option value="hanmail.com">hanmail.com</option>
+        <option value="google.com">google.com</option>
+        <option value="daum.net">daum.net</option>
+    </select>
+</body>
+</html>
