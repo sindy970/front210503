@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점프로그램</title>
+    <script>
+        function test1(){
+            var num1 = document.getElementById('text').value;
+            var num2;
+
+            if(num1>=90){
+                num2 = 'A';
+            } else if(num1>=80){
+                num2 = 'B';
+            } else if(num1>=70){
+                num2 = 'C';
+            } else if(num1>=60){
+                num2 = 'D';
+            } else {
+                num2 = 'F';
+            }
+
+            document.getElementById('text2').value = num2;
+            document.getElementById('result').innerHTML = num2;
+        }
+        
+    </script>
+</head>
+<body>
+    <b><h1>성적산출하기</h1></b><br>
+    점수 : <input type="text" name="text" id="text"><br>
+    성적 : <input type="text" name="score" id="text2"><br>
+
+    <button onclick="test1()">성적??</button> 
+
+    <div id="result">
+
+    </div>
+
+</body>
+</html>

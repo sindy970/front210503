@@ -1,0 +1,48 @@
+<!-- 예제문제
+        성적 산출 프로그램 만들기
+            * 점수를 입력받으면 자동으로 성적이 입력되게끔 만들기 
+            * 점수만 사용자가 입력함-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점프로그램</title>
+    <script>
+        function test1(){
+            var num1 = document.getElementById('text').value;
+            var num2 = document.getElementById('text2');
+
+            if(num1>=90){
+                num2.value = 'A';
+            } else if(num1>=80){
+                num2.value = 'B';
+            } else if(num1>=70){
+                num2.value = 'C';
+            } else if(num1>=60){
+                num2.value = 'D';
+            } else {
+                num2.value = 'F';
+            }
+
+            console.log(num1);
+            console.log(num2.value);
+            document.getElementById('result').innerHTML = num2.value;
+        }
+        
+    </script>
+</head>
+<body>
+    <b><h1>성적산출하기</h1></b><br>
+    점수 : <input type="text" name="text" id="text"><br>
+    성적 : <input type="text" name="score" id="text2"><br>
+
+    <button onclick="test1()">성적??</button> 
+
+    <div id="result">
+
+    </div>
+
+</body>
+</html>
